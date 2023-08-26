@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -8,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject PauseMenuUI;
+
+    private bool isPaused = false;
    
 
     // Update is called once per frame
@@ -15,34 +18,50 @@ public class PauseMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(GameIsPaused)
+            if(isPaused)
+            {  
+                Pause();
+                Debug.Log("Game is Paused");
+            }
+            
+            else
             {
-                 ResumeGame();
-            }else
-            {
-                PauseGame();
+                Resume();
+                Debug.Log("Game is Resume");
             }
         }
-        
     }
 
-    public void ResumeGame()
+    public void Resume()
     {
+        Debug.Log("Game is Resume");
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    void PauseGame()
+    void Pause()
     {
+        Debug.Log("Game is Paused");
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void LoadMenu()
     {
         Debug.Log("Loading Game");
+    }
+
+    public void SkipGame()
+    {
+        Debug.Log("Skipping Part");
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
     public void QuitGame()
@@ -51,78 +70,3 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

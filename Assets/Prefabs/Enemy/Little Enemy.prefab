@@ -73,28 +73,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 693bfae807947472aaad6f63f2207272, type: 2}
     - target: {fileID: 5629593600143632547, guid: ed3aad7245e964b72a0cad21ad27a7ae, type: 3}
       propertyPath: maxHealth
-      value: 75
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6268121261875600319, guid: ed3aad7245e964b72a0cad21ad27a7ae, type: 3}
     - {fileID: 3524620471403505897, guid: ed3aad7245e964b72a0cad21ad27a7ae, type: 3}
+    - {fileID: 6892836310214490924, guid: ed3aad7245e964b72a0cad21ad27a7ae, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed3aad7245e964b72a0cad21ad27a7ae, type: 3}
---- !u!1 &4922364896925273555 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3044507721542409957, guid: ed3aad7245e964b72a0cad21ad27a7ae, type: 3}
-  m_PrefabInstance: {fileID: 7930701982299149110}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &-6884202935388037723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4922364896925273555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08008e9432ffa49fb85bdf59189b587e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  targetType: 0

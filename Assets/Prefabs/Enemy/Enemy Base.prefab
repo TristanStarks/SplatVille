@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5938016185518732584}
   - component: {fileID: 8389786949316207439}
   - component: {fileID: 3374470407851487347}
-  - component: {fileID: -3980717792881655003}
+  - component: {fileID: -6377070699661848352}
   m_Layer: 0
   m_Name: Enemy Base
   m_TagString: Enemy
@@ -149,9 +149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c631de58fd241fdaf60cc9e1b6ef28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
   currentHealth: 100
---- !u!114 &-3980717792881655003
+  maxHealth: 100
+  testHealAmount: 5
+  testDamageAmount: -5
+--- !u!114 &-6377070699661848352
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,8 +162,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5938016185518732585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08008e9432ffa49fb85bdf59189b587e, type: 3}
+  m_Script: {fileID: 11500000, guid: 04b0dcce70dd34deba12e2899fa94434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: -500
-  targetType: 0
+  Respawn: 0

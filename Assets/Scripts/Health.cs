@@ -4,20 +4,45 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    #region Variables
-    public int maxHealth;
-    public int currentHealth;
-    #endregion
-
-    public void ChangeHealth(int damage)
+    // Define the health changed event and handler delegate.
+    public delegate void HealthChangedHandler(object source, float oldHealth, float newHealth);
+    public event HealthChangedHandler OnHealthChanged;
+ 
+    // Show in inspector
+    [SerializeField]
+    float currentHealth;
+    [SerializeField]
+    float maxHealth;
+    // Allow other scripts a readonly property to access current health
+    public float CurrentHealth => currentHealth;
+ 
+    // test values
+    [SerializeField]
+    float testHealAmount = 5f;
+    [SerializeField]
+    float testDamageAmount = -5f;
+ 
+    public void ChangeHealth(float amount) 
     {
-        //Health goes up or down
-        currentHealth = currentHealth + damage;
-
-
-        if (currentHealth <= 0)
+        float oldHealth = currentHealth;
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+ 
+        // Fire off health change event.
+        OnHealthChanged?.Invoke(this, oldHealth, currentHealth);
+    }
+ 
+    // Test code
+    void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.Q)) 
         {
-            Destroy(gameObject);
+            ChangeHealth(testHealAmount);
+        }
+        if (Input.GetKeyDown(KeyCode.E)) 
+        {
+            ChangeHealth(testDamageAmount);
         }
     }
-}
+} 
+

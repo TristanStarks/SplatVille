@@ -81,6 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 1484889772260761329, guid: abc20e1fa8eb64a239c72a819a69e253, type: 3}
     m_RemovedComponents:
     - {fileID: 3374470407851487347, guid: d61f144b2599d47dab1651840e173256, type: 3}
+    - {fileID: -3980717792881655003, guid: d61f144b2599d47dab1651840e173256, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d61f144b2599d47dab1651840e173256, type: 3}
 --- !u!1 &3044507721542409957 stripped
 GameObject:
@@ -99,5 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c631de58fd241fdaf60cc9e1b6ef28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
   currentHealth: 1000
+  maxHealth: 1000
+  testHealAmount: 5
+  testDamageAmount: -5
